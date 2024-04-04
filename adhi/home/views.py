@@ -16,8 +16,9 @@ def about(request):
         print(name,password)
         new_user = user_register(name= name,email =email,phone = phone,image= image,password = password)
         new_user.save()
+        messages.success(request, "User created successfully!") 
         return redirect("index")
-
+        
     return render(request,"about.html")
 def reg(request):
     return render(request,"login.html")
